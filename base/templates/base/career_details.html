@@ -1,0 +1,130 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- Job Details + Apply Start -->
+<div class="container py-5">
+    <!-- Back link -->
+    <a href="{% url 'careers' %}" class="back-link d-inline-flex align-items-center mb-4">
+      <i class="fas fa-arrow-left me-2"></i>
+      Back to All Positions
+    </a>
+  
+    <div class="row gx-5">
+      <!-- LEFT COLUMN: Job Details -->
+      <div class="col-lg-8">
+        <div class="card detail-card mb-5">
+          <div class="card-body">
+            <div class="d-flex align-items-center mb-3">
+              <i class="{{career.icon}}"></i>
+              <h2 class="h4 mb-0">{{career.title}}</h2>
+            </div>
+  
+            <!-- Tag list -->
+            <div class="mb-4">
+              <span class="badge bg-light text-primary me-2">
+                <i class="fas fa-map-marker-alt me-1"></i>{{career.work_type}}
+              </span>
+              <span class="badge bg-light text-secondary me-2">
+                <i class="fas fa-clock me-1"></i>{{career.experience}}
+              </span>
+              <span class="badge bg-light text-primary">
+                <i class="fas fa-briefcase me-1"></i>Full-time
+              </span>
+            </div>
+  
+            <!-- Job Description -->
+            <h5 class="fw-semibold">Job Description</h5>
+            <p class="mb-4">
+              {{career.description}}
+            </p>
+  
+            <!-- Responsibilities -->
+            <h5 class="fw-semibold">Responsibilities</h5>
+            <ul class="mb-4">
+              {% for responsibility in career.responsibilities %}
+                <li>{{responsibility}}</li>
+              {% endfor %}
+            </ul>
+  
+            <!-- Required Skills -->
+            <h5 class="fw-semibold">Required Skills</h5>
+            <div class="skill-tags mb-4">
+              {% for skill in career.skills %}
+                <span class="badge bg-light text-dark me-2">{{skill}}</span>
+              {% endfor %}
+        
+            </div>
+  
+            <!-- About Company -->
+            <h5 class="fw-semibold">About Atlas Trust Group</h5>
+            <p class="mb-0">
+              At Atlas Trust Group, we’re committed to protecting what matters most to our clients. We offer competitive compensation, comprehensive benefits, and opportunities for professional growth in a supportive, inclusive environment.
+            </p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- RIGHT COLUMN: Apply Form -->
+      <div class="col-lg-4">
+        <div class="card apply-card sticky-top" style="top: 100px;">
+          <div class="card-body">
+            <h5 class="h5 mb-4">Apply for this Position</h5>
+            <form id="application-form">
+              <div class="mb-3">
+                <label for="app-fullname" class="form-label">Full Name</label>
+                <input type="text" id="app-fullname" class="form-control" placeholder="Your name">
+              </div>
+              <div class="mb-3">
+                <label for="app-email" class="form-label">Email</label>
+                <input type="email" id="app-email" class="form-control" placeholder="you@example.com">
+              </div>
+              
+              <div class="mb-3">
+                <label for="app-phone" class="form-label">Phone Number</label>
+                <input type="tel" id="app-phone" class="form-control" placeholder="+1234567890">
+              </div>
+              <div class="mb-3">
+                <label for="app-address" class="form-label">Address</label>
+                <input type="text" id="app-address" class="form-control" placeholder="Street, City, State, ZIP">
+              </div>
+              <div class="mb-3">
+                <label for="app-position" class="form-label">Position</label>
+                <input type="text" id="app-position" class="form-control" placeholder="{{career.title}}" disabled>
+              </div>
+              <div class="mb-3">
+                <label for="app-experience" class="form-label">Experience Level</label>
+                <select id="app-experience" class="form-select">
+                  <option>Entry-level</option>
+                  <option>1–2 years</option>
+                  <option>3+ years</option>
+                </select>
+              </div>
+              <div class="mb-4">
+                <label class="form-label d-block">Resume</label>
+                <div class="resume-upload text-center py-5 rounded position-relative">
+                  <i class="fas fa-cloud-upload-alt fa-2x mb-2 text-secondary"></i>
+                  <p class="mb-0 text-secondary">Drag &amp; drop or click to browse</p>
+                  <small class="text-muted">PDF, DOC, DOCX</small>
+                  <!--  ▶︎ Bare file input, no default browser styling -->
+                  <input 
+                    type="file" 
+                    id="app-resume" 
+                    class="resume-input" 
+                    accept=".pdf,.doc,.docx" 
+                  />
+                </div>
+              </div>
+              
+              <button type="submit" class="btn btn-primary w-100 py-2">Submit Application</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Job Details + Apply End -->
+  
+
+{% endblock content %}

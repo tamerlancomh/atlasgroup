@@ -1,0 +1,122 @@
+{% extends 'main.html' %}
+{% load static %}
+
+
+{% block content %}
+
+ <!-- Page Header Start -->
+ <div
+ class="container-fluid page-header py-5 mb-5 wow fadeIn"
+ data-wow-delay="0.1s"
+>
+ <div class="container py-5">
+   <h1 class="display-4 animated slideInDown mb-4">Our Services</h1>
+   <nav aria-label="breadcrumb animated slideInDown">
+     <ol class="breadcrumb mb-0">
+       <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+       <li class="breadcrumb-item active" aria-current="page">Services</li>
+     </ol>
+   </nav>
+ </div>
+</div>
+<!-- Page Header End -->
+
+<!-- Service Start -->
+<div class="container-xxl py-5">
+  <div class="container">
+    <div class="text-center mx-auto" style="max-width: 500px">
+      <h1 class="display-6 mb-5">
+        We provide professional insurance services that protect and grow your wealth
+      </h1>
+    </div>
+    <div class="row g-4 justify-content-center">
+      <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="service-item rounded h-100 p-5">
+          <div class="d-flex align-items-center ms-n5 mb-4">
+            <div class="service-icon flex-shrink-0 bg-primary rounded-end me-4">
+              <img class="img-fluid" src="{% static 'img/icon/icon-10-light.png'%}" alt="" />
+            </div>
+            <h4 class="mb-0">Life Insurance</h4>
+          </div>
+          <p class="mb-4">
+            Secure your family’s future with our comprehensive life insurance plans that build lasting wealth and provide peace of mind for generations to come.
+          </p>
+          <a class="btn btn-light px-3" href="{% url 'contact' %}">Learn More</a>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+        <div class="service-item rounded h-100 p-5">
+          <div class="d-flex align-items-center ms-n5 mb-4">
+            <div class="service-icon flex-shrink-0 bg-primary rounded-end me-4">
+              <img class="img-fluid" src="{% static 'img/icon/icon-01-light.png'%}" alt="" />
+            </div>
+            <h4 class="mb-0">Health Insurance</h4>
+          </div>
+          <p class="mb-4">
+            Protect your health and safeguard your finances with coverage that ensures access to quality care, while preserving your long-term financial stability.
+          </p>
+          <a class="btn btn-light px-3" href="{% url 'contact' %}">Learn More</a>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+        <div class="service-item rounded h-100 p-5">
+          <div class="d-flex align-items-center ms-n5 mb-4">
+            <div class="service-icon flex-shrink-0 bg-primary rounded-end me-4">
+              <img class="img-fluid" src="{% static 'img/icon/icon-05-light.png'%}" alt="" />
+            </div>
+            <h4 class="mb-0">Home Insurance</h4>
+          </div>
+          <p class="mb-4">
+            Safeguard your home—your most valuable asset—with protection that not only covers losses but also secures the wealth you've worked hard to build.
+          </p>
+          <a class="btn btn-light px-3" href="{% url 'contact' %}">Learn More</a>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="service-item rounded h-100 p-5">
+          <div class="d-flex align-items-center ms-n5 mb-4">
+            <div class="service-icon flex-shrink-0 bg-primary rounded-end me-4">
+              <img class="img-fluid" src="{% static 'img/icon/icon-08-light.png' %}" alt="" />
+            </div>
+            <h4 class="mb-0">Vehicle Insurance</h4>
+          </div>
+          <p class="mb-4">
+            Drive with confidence knowing your vehicles are protected with policies designed to minimize financial risk and preserve your personal wealth.
+          </p>
+          <a class="btn btn-light px-3" href="{% url 'contact' %}">Learn More</a>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+        <div class="service-item rounded h-100 p-5">
+          <div class="d-flex align-items-center ms-n5 mb-4">
+            <div class="service-icon flex-shrink-0 bg-primary rounded-end me-4">
+              <img class="img-fluid" src="{% static 'img/icon/icon-07-light.png'%}" alt="" />
+            </div>
+            <h4 class="mb-0">Business Insurance</h4>
+          </div>
+          <p class="mb-4">
+            Empower your business to thrive with insurance solutions that mitigate risks, protect your assets, and ensure sustainable wealth creation.
+          </p>
+          <a class="btn btn-light px-3" href="{% url 'contact' %}">Learn More</a>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+        <div class="service-item rounded h-100 p-5">
+          <div class="d-flex align-items-center ms-n5 mb-4">
+            <div class="service-icon flex-shrink-0 bg-primary rounded-end me-4">
+              <img class="img-fluid" src="{% static 'img/icon/icon-06-light.png'%}" alt="" />
+            </div>
+            <h4 class="mb-0">Property Insurance</h4>
+          </div>
+          <p class="mb-4">
+            Protect your investments and secure the long-term value of your properties with comprehensive coverage that strengthens your financial future.
+          </p>
+          <a class="btn btn-light px-3" href="{% url 'contact' %}">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Service End -->
+
+{% endblock content %}

@@ -1,0 +1,79 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+
+ <!-- Page Header Start -->
+ <div
+ class="container-fluid page-header py-5 mb-5 wow fadeIn"
+ data-wow-delay="0.1s"
+>
+ <div class="container py-5">
+   <h1 class="display-4 animated slideInDown mb-4">Careers</h1>
+   <nav aria-label="breadcrumb animated slideInDown">
+     <ol class="breadcrumb mb-0">
+       <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+       <li class="breadcrumb-item active" aria-current="page">Careers</li>
+     </ol>
+   </nav>
+ </div>
+</div>
+<!-- Page Header End -->
+
+<!-- Job Openings Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+      <div class="text-center mx-auto" style="max-width: 500px">
+        <h1 class="display-6 mb-5">
+          We’re Hiring! Explore Our Open Positions
+        </h1>
+      </div>
+      <div class="row g-4 justify-content-center">
+        {% for career in careers %}
+        <div class="col-lg-4 col-md-6">
+            <div class="job-item rounded h-100 d-flex flex-column">
+              
+              <div class="job-body flex-grow-1 p-4">
+                <div class="d-flex align-items-center mb-3">
+                  <div class="job-icon me-3">
+                    <i class="{{career.icon}}"></i>
+                  </div>
+                  <h4 class="job-title mb-0">{{career.title}}</h4>
+                  <span class="badge bg-light text-primary ms-auto">{{career.location}}</span>
+                </div>
+          
+                <ul class="job-responsibilities mb-3">
+                  {% for responsibility in career.responsibilities %}
+                  <li>{{responsibility}}</li>
+                  {% endfor %}
+                </ul>
+          
+                <!-- EXPERIENCE LEVEL (new, separate) -->
+                <div class="job-experience mb-3">
+                  <i class="fas fa-clock me-1"></i>
+                  <span>{{career.experience}}</span>
+                </div>
+          
+                
+                <div class="job-tags">
+                  {% for skill in career.skills %}
+                  <span class="badge bg-light text-dark">{{skill}}</span>
+                  {% endfor %}
+                </div>
+              </div>
+          
+              <div class="job-footer p-4">
+                <a href="{% url 'career' slug=career.slug%}" class="btn btn-primary w-100">Apply Now</a>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+          
+          
+      </div>
+    </div>
+  </div>
+  <!-- Job Openings End -->
+  
+
+{% endblock content %}
