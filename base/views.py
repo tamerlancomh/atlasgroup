@@ -33,4 +33,7 @@ def team(request):
 
 def custom_page_not_found(request, exception):
 
-    return render(request, '404.html',  status=404)
+    context = {
+        'path': request.path
+    }
+    return render(request, '404.html', context=context, status=404)
