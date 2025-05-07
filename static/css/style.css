@@ -616,6 +616,53 @@
   }
 }
 
+/*** Support Section ***/
+#support h1 {
+    font-weight: 600;
+  }
+  
+  .support-item {
+    background: #fff;
+    box-shadow: 0 0 45px rgba(0, 0, 0, 0.07);
+    overflow: hidden;
+  }
+  
+  /* Blue header strip */
+  .support-header {
+    background-color: var(--bs-primary);
+  }
+  .support-header h5 {
+    color: #fff;
+    font-size: 1.125rem;
+  }
+  
+  /* Icon circle in header */
+  .support-icon-header {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--bs-primary);
+    font-size: 1.2rem;
+  }
+  
+  /* Body padding */
+  .support-item .p-5 {
+    padding: 2rem !important;
+  }
+  
+  /* Light background boxes */
+  .support-item .bg-light {
+    background-color: #f0f8ff !important;
+  }
+  
+  /* Phone number highlight */
+  .support-item .text-primary {
+    color: var(--bs-primary) !important;
+  }
+  
+
 
   
 
