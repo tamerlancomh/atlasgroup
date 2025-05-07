@@ -27,3 +27,10 @@ def career_details(request, slug):
         'career': career
     }
     return render(request, 'base/career_details.html', context)
+
+def team(request):
+    return render(request, 'base/team.html')
+
+def custom_page_not_found(request, exception):
+
+    return render(request, '404.html',  status=404)
