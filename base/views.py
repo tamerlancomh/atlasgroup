@@ -31,9 +31,6 @@ def career_details(request, slug):
 def team(request):
     return render(request, 'base/team.html')
 
-def custom_page_not_found(request, exception):
-
-    context = {
-        'path': request.path
-    }
-    return render(request, '404.html', context=context, status=404)
+def error_404(request, exception):
+    context = {}
+    return render(request, 'base/404.html', context)
