@@ -28,9 +28,9 @@ def career_details(request, slug):
     }
     return render(request, 'base/career_details.html', context)
 
-def team(request):
-    return render(request, 'base/team.html')
-
 def error_404(request, exception):
     context = {}
     return render(request, 'base/404.html', context)
+
+def teams(request):
+    return render(request, 'base/teams.html')
