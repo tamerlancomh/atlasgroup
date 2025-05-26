@@ -25,6 +25,34 @@
         }
     });
 
+    // Select elements
+        const resumeInput = document.getElementById('app-resume');
+        const overlay = document.querySelector('.resume-upload .file-overlay');
+        const fileNameSpan = document.querySelector('.resume-upload .file-overlay .file-name');
+        const cancelBtn = document.querySelector('.cancel-file');
+
+        // When a file is chosen
+        resumeInput.addEventListener('change', function() {
+                const file = this.files[0];
+                if (file) {
+                    // Show overlay with filename
+                    fileNameSpan.textContent = file.name;
+                    overlay.classList.remove('d-none');
+                    cancelBtn.classList.remove('d-none');
+                } else {
+                    // Reset if no file
+                    overlay.classList.add('d-none');
+                    cancelBtn.classList.add('d-none');
+                }
+        });
+
+        // Cancel / remove file
+        cancelBtn.addEventListener('click', function() {
+                resumeInput.value = '';               // Clear input
+                overlay.classList.add('d-none');      // Hide overlay
+                cancelBtn.classList.add('d-none');    // Hide button
+        });
+
    
         emailjs.init("PRUBtBWDZYkwRDN7c"); 
       
